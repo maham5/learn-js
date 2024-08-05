@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1 class="heading">DoM Learning</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, velit. </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, velit. </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, velit. </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, velit. </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, velit. </p>
+
+        </div>
+
+        <div class="parent">
+           <div>Monday</div>
+           <div>Tuesday</div>
+           <div>Wednesday</div>
+           <div>Thursday</div>
+           
+
+           
+        </div>
+
+        <li>java</li>
+
+        <script>
+         /*   const h= document.querySelector("h1");
+           // h.innerHTML="New Dom Lecture";
+           h.style.backgroundColor="blue";
+           h.style.padding="10px"
+           h.style.color="white"
+
+
+           const  para = document.querySelectorAll("p");
+         //  para[0].style.backgroundColor = "red"
+           para[1].style.color="green"
+           para[2] .style.padding="10px"*/
+
+           const parents= document.querySelector(".parent");
+       /*  console.log(parents) ;
+         console.log(parents.children) ;
+         console.log(parents.children[1].innerHTML) ;*/
+
+     
+ //  console.log(parents.firstElementChild);
+  // console.log(parents.lastElementChild);
+
+  // console.log(parents.childNodes);
+
+
+  //++++++++++create element++++++++++//
+
+  const div = document.createElement("div");
+  console.log(div);
+  div.className="main"
+  div.setAttribute("title" , "generated title")
+  const addtext = document.createTextNode("Hello World");
+  div.appendChild(addtext);
+  document.body.appendChild(div)
+
+  //+++++++++++Edit and Remove+++++++++++//
+const addElement = (langname)=>{
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(`${langname}`));
+    document.body.appendChild(li)
+
+}
+addElement("javaScript");
+addElement("python");
+addElement("c++");
+const remove =document.querySelector("li:first-child");
+remove.remove()
+
+
+//+++++edit+++++++//
+const secondlang = document.querySelector("li:first-child");
+secondlang.outerHTML="<li>mongo</li>";
+ 
+
+
+
+
+
+        
+        </script>
+</body>
+
+</html>
