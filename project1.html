@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Switcher</title>
+    <style>
+       
+
+        #grey{
+            border: 2px solid black;
+            background-color: gray;
+            width: 50px;
+            height:30px;
+           
+            
+            
+        }
+        #blue{
+            border: 2px solid black;
+            background-color: rgb(26, 177, 218);
+            width: 50px;
+            height:30px;
+    
+           
+           
+        }
+        #pink{
+            border: 2px solid black;
+            background-color: rgb(193, 80, 137);
+            width: 50px;
+            height:30px;
+           
+            
+        }
+       
+        .box{
+           display: flex;
+      justify-content:center;
+      
+        
+        }
+        .button{
+            margin: 10px;
+        }
+        h2{
+            text-align: center;
+        }
+       
+     #main{
+      margin-top: 30vh;
+     }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>Colour Scheme Switcher</h2>
+        <div class="box">
+        
+        <div class="button" id="grey"></div>
+        <div class="button" id="blue"></div>
+        <div class="button" id="pink"></div>
+
+    </div>
+
+
+        <h2>Try clicking on one of the colors above<br>
+             to change the background color of this page</h2>
+
+    </div>
+    
+    <script>
+   const buttons=document.querySelectorAll(".button");
+  const body= document.querySelector("body");
+  buttons.forEach((btn)=>{
+      btn.addEventListener('click' , function(e){
+       if(e.target.id ==="grey" ){
+        body.style.backgroundColor = e.target.id;
+       }
+       if(e.target.id ==="blue" ){
+        body.style.backgroundColor = e.target.id;
+        body.style.color ="white"
+       }
+       if(e.target.id ==="pink" ){
+        body.style.backgroundColor = e.target.id;
+        body.style.color = "black"
+       }
+      })
+  })
+
+ 
+    </script>
+</body>
+</htm
