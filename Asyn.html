@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyn Events</title>
+</head>
+<body>
+     <h1 class="heading">Asyn Js</h1>
+     <button class="stop">Stop</button>
+
+
+     <script>
+      const name=()=>{
+        console.log("Maham")
+      }
+      setTimeout(name,2000);
+
+    const chngeName=()=>{
+        document.querySelector(".heading").innerHTML="Asyn Js Learning Series";
+        
+    }
+  const chngetext=  setTimeout(chngeName,3000);
+
+   
+        document.querySelector(".stop").addEventListener('click' , function(){
+            clearTimeout(chngetext);
+            console.log("stopped")
+        })
+
+      
+     </script>
+</body>
+</html>

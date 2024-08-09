@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+</head>
+<body>
+    <ul class="images">
+    <li><img src="elephant.jpg" alt="" class="elephant" width="200px"  object-fit="contain"></li>
+    <li><img src="zebra.jpg" alt="" class="zebra" width="200px"  object-fit="cover"></li>
+    <li><img src="parrot.jpg" alt=""  class="parrot" width="200px"  object-fit="cover"></li>
+    <li><img src="lion.jpg" alt=""  class="lion" width="200px"  object-fit="cover"></li>
+    <li><img src="squirrel.jpg" alt=""  class="squirel" width="200px"  object-fit="cover" ></li>
+</ul>
+
+    <script>
+    document.querySelector(".parrot").addEventListener('click', function(){
+       // alert('parrot clicked')
+        })
+
+
+        //Event propogation inside to outside
+      /*  document.querySelector(".images").addEventListener('click', function(){
+        console.log('images clicked')
+        }, false)
+        document.querySelector(".parrot").addEventListener('click', function(e){
+        console.log('parrot clicked');
+        e.stopPropagation()
+
+        },false)*/
+
+        //bubbling mode = inner to outside (false)
+
+        // capturing mode = outside to inner (true)
+        document.querySelector(".images").addEventListener('click', function(){
+        console.log('images clicked')
+        }, true)
+        document.querySelector(".parrot").addEventListener('click', function(e){
+        console.log('parrot clicked');
+        e.stopPropagation()
+
+        },true)
+
+
+        document.querySelector(".images").addEventListener('click', function(e){
+         let removeit = e.target.parentNode;
+         e.stopPropagation()
+         removeit.remove();
+        }, )
+
+
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key press</title>
+    <style>
+        body{
+            background-color: rgb(37, 33, 33);
+            color: white;
+        }
+        .insert{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 20%;
+            
+        }
+        table, th, td {
+  border: 1px solid ;
+  
+}
+    </style>
+</head>
+<body>
+    <div class="insert">
+        <h2>Press the key</h2>
+    </div>
+
+    <script>
+      const insert=  document.querySelector(".insert");
+        window.addEventListener('keydown' , (e)=>{
+           insert.innerHTML = `
+           <div class ="color">
+            <table>
+  <tr>
+    <th>key</th>
+    <th>keyCode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'space': e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code }</td>
+  </tr>
+</table>
+            </div>
+           `
+        })
+    </script>
+</body>
+</html>
